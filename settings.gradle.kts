@@ -39,6 +39,7 @@ include(":extensions:data-plane:integration-tests")
 
 
 include(":launchers:data-plane-server")
+include(":launchers:registration-service-app")
 
 //include(":openapi")
 
