@@ -15,19 +15,20 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 val cosmosSdkVersion: String by project
 val jodahFailsafeVersion: String by project
 
 dependencies {
-    api(project(":spi:transfer-spi"))
-    api(project(":common:util"))
+    api("org.eclipse.dataspaceconnector:transfer-spi:${edcCoreVersion}")
+    api("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
     api(project(":extensions:azure:cosmos:cosmos-common"))
 
     implementation("com.azure:azure-cosmos:${cosmosSdkVersion}")
     implementation("net.jodah:failsafe:${jodahFailsafeVersion}")
 
-    testImplementation(testFixtures(project(":common:util")))
+    testImplementation(testFixtures("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}"))
     testImplementation(testFixtures(project(":extensions:azure:azure-test")))
 }
 

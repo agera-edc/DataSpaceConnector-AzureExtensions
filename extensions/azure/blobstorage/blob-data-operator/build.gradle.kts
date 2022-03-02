@@ -15,11 +15,12 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 val storageBlobVersion: String by project
 
 dependencies {
-    api(project(":spi"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
 
     implementation(project(":extensions:azure:blobstorage:blob-core"))
 }

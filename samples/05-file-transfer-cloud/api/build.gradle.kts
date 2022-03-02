@@ -16,13 +16,14 @@ plugins {
     `java-library`
     id("application")
 }
+val edcCoreVersion: String by project
 
 val rsApi: String by project
 
 dependencies {
-    api(project(":spi"))
-    api(project(":core:transfer"))
-    implementation(project(":common:util"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
+    api("org.eclipse.dataspaceconnector:transfer:${edcCoreVersion}")
+    implementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
 
     api("jakarta.ws.rs:jakarta.ws.rs-api:${rsApi}")
 }

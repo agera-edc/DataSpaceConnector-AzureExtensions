@@ -15,10 +15,11 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 dependencies {
-    api(project(":spi"))
-    implementation(project(":common:util"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
+    implementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
     implementation(project(":extensions:azure:events-config"))
 }
 

@@ -21,28 +21,29 @@ plugins {
 
 val jupiterVersion: String by project
 val rsApi: String by project
+val edcCoreVersion: String by project
 
 dependencies {
-    implementation(project(":core"))
+     implementation("org.eclipse.dataspaceconnector:core:${edcCoreVersion}")
 
-    implementation(project(":extensions:in-memory:assetindex-memory"))
-    implementation(project(":extensions:in-memory:transfer-store-memory"))
-    implementation(project(":extensions:in-memory:contractdefinition-store-memory"))
-    implementation(project(":extensions:filesystem:configuration-fs"))
-    implementation(project(":extensions:in-memory:assetindex-memory"))
-    implementation(project(":extensions:in-memory:negotiation-store-memory"))
-    implementation(project(":extensions:http"))
+     implementation("org.eclipse.dataspaceconnector:assetindex-memory:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:transfer-store-memory:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:contractdefinition-store-memory:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:configuration-fs:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:assetindex-memory:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:negotiation-store-memory:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:http:${edcCoreVersion}")
 
-    implementation(project(":extensions:aws:s3:s3-provision"))
+     implementation("org.eclipse.dataspaceconnector:s3-provision:${edcCoreVersion}")
 
-    implementation(project(":extensions:iam:iam-mock"))
-    implementation(project(":extensions:azure:vault"))
+     implementation("org.eclipse.dataspaceconnector:iam-mock:${edcCoreVersion}")
+     implementation(project(":extensions:azure:vault"))
 
-    implementation(project(":extensions:api:control"))
+     implementation("org.eclipse.dataspaceconnector:control-api:${edcCoreVersion}")
 
-    implementation(project(":data-protocols:ids"))
+     implementation("org.eclipse.dataspaceconnector:ids:${edcCoreVersion}")
 
-    implementation(project(":samples:05-file-transfer-cloud:api"))
+     implementation(project(":samples:05-file-transfer-cloud:api"))
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${jupiterVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${jupiterVersion}")

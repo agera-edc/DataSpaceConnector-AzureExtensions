@@ -17,15 +17,16 @@ plugins {
     `java-test-fixtures`
     `maven-publish`
 }
+val edcCoreVersion: String by project
 
 val cosmosSdkVersion: String by project
 val storageBlobVersion: String by project;
 val jupiterVersion: String by project
 
 dependencies {
-    api(project(":spi"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
 
-    testFixturesApi(project(":common:util"))
+    testFixturesApi("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
     testFixturesApi("com.azure:azure-cosmos:${cosmosSdkVersion}")
     testFixturesApi("com.azure:azure-storage-blob:${storageBlobVersion}")
     testFixturesApi("org.junit.jupiter:junit-jupiter-api:${jupiterVersion}")

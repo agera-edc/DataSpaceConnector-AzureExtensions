@@ -1,6 +1,7 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 val jwtVersion: String by project
 val rsApi: String by project
@@ -8,7 +9,7 @@ val okHttpVersion: String by project
 
 dependencies {
     implementation(project(":extensions:azure:events-config"))
-    implementation(project(":extensions:iam:decentralized-identity:identity-did-spi"))
+    implementation("org.eclipse.dataspaceconnector:identity-did-spi:${edcCoreVersion}")
 
     // third party
     implementation("com.squareup.okhttp3:okhttp:${okHttpVersion}")

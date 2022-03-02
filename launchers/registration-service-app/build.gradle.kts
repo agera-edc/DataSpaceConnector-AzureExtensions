@@ -17,14 +17,15 @@ plugins {
     id("application")
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
+val edcCoreVersion: String by project
 
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":common:util"))
-    implementation(project(":extensions:iam:decentralized-identity:registration-service"))
-    implementation(project(":extensions:iam:decentralized-identity:registration-service-api"))
-    implementation(project(":extensions:in-memory:did-document-store-inmem"))
+     implementation("org.eclipse.dataspaceconnector:core:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
+     implementation(project(":extensions:azure:registration-service"))
+     implementation("org.eclipse.dataspaceconnector:registration-service-api:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:did-document-store-memory:${edcCoreVersion}")
 }
 
 application {

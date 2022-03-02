@@ -15,21 +15,22 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 val storageBlobVersion: String by project
 val jodahFailsafeVersion: String by project
 
 
 dependencies {
-    api(project(":spi"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
     api(project(":extensions:azure:blobstorage:blob-core"))
 
     implementation("com.azure:azure-storage-blob:${storageBlobVersion}")
 
     api("net.jodah:failsafe:${jodahFailsafeVersion}")
 
-    testImplementation(testFixtures(project(":extensions:azure:azure-test")))
-    testImplementation(testFixtures(project(":common:util")))
+     testImplementation(testFixtures(project(":extensions:azure:azure-test")))
+     testImplementation(testFixtures("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}"))
 }
 
 publishing {

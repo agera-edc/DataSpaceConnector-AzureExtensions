@@ -15,9 +15,10 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 dependencies {
-    api(project(":spi"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
 
-    api(project(":extensions:dataloading"))
+    api("org.eclipse.dataspaceconnector:dataloading:${edcCoreVersion}")
 }

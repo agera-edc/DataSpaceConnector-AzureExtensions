@@ -19,15 +19,16 @@ val jodahFailsafeVersion: String by project
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 dependencies {
-    api(project(":extensions:data-plane:data-plane-spi"))
-    implementation(project(":common:util"))
+    api("org.eclipse.dataspaceconnector:data-plane-spi:${edcCoreVersion}")
+    implementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
     implementation("com.azure:azure-storage-blob:${storageBlobVersion}")
     implementation("net.jodah:failsafe:${jodahFailsafeVersion}")
 
     testImplementation(testFixtures(project(":extensions:azure:azure-test")))
-    testImplementation(testFixtures(project(":common:util")))
+    testImplementation(testFixtures("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}"))
 }
 
 publishing {

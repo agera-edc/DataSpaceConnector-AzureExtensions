@@ -14,6 +14,7 @@
 
 val okHttpVersion: String by project
 val jodahFailsafeVersion: String by project
+val edcCoreVersion: String by project
 
 plugins {
     `java-library`
@@ -22,15 +23,15 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":spi:web-spi"))
-    implementation(project(":core:base"))
-    implementation(project(":core:boot"))
-    implementation(project(":extensions:http"))
-    implementation(project(":extensions:data-plane:data-plane-spi"))
-    implementation(project(":extensions:data-plane:data-plane-framework"))
-    implementation(project(":extensions:data-plane:data-plane-http"))
-    implementation(project(":extensions:azure:data-plane-azure-storage"))
-    implementation(project(":extensions:data-plane:data-plane-api"))
+     implementation("org.eclipse.dataspaceconnector:web-spi:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:core-base:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:core-boot:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:http:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:data-plane-spi:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:data-plane-framework:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:data-plane-http:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:data-plane-azure-storage:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:data-plane-azure-api:${edcCoreVersion}")
 }
 
 application {

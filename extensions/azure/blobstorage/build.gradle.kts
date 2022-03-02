@@ -15,11 +15,12 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 
 //this file serves as BOM for blobstorage
 dependencies {
-    api(project(":spi"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
     api(project(":extensions:azure:blobstorage:blob-data-operator"))
     api(project(":extensions:azure:blobstorage:blob-core"))
     api(project(":extensions:azure:blobstorage:blob-provision"))

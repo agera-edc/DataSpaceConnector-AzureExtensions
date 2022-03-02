@@ -15,10 +15,11 @@
 plugins {
     `java-library`
 }
+val edcCoreVersion: String by project
 
 //This file serves as BOM for cosmos db
 dependencies {
-    api(project(":spi"))
+    api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
     api(project(":extensions:azure:cosmos:assetindex-cosmos"))
     api(project(":extensions:azure:cosmos:contract-definition-store-cosmos"))
     api(project(":extensions:azure:cosmos:contract-negotiation-store-cosmos"))
