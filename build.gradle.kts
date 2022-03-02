@@ -51,6 +51,14 @@ subprojects {
         maven {
             url = uri("https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/")
         }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/agera-edc/DataSpaceConnector-Core")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 
     tasks.register<DependencyReportTask>("allDependencies") {}
@@ -114,7 +122,7 @@ allprojects {
             repositories {
                 maven {
                     name = "GitHubPackages"
-                    url = uri("https://maven.pkg.github.com/eclipse-dataspaceconnector/DataSpaceConnector")
+                    url = uri("https://maven.pkg.github.com/agera-edc/DataSpaceConnector-Extensions")
                     credentials {
                         username = System.getenv("GITHUB_ACTOR")
                         password = System.getenv("GITHUB_TOKEN")
