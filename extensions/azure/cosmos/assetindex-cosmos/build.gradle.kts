@@ -22,15 +22,15 @@ val jodahFailsafeVersion: String by project
 
 dependencies {
     api("org.eclipse.dataspaceconnector:spi:${edcCoreVersion}")
-     api("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
-     api(project(":extensions:azure:cosmos:cosmos-common"))
-     api("org.eclipse.dataspaceconnector:dataloading:${edcCoreVersion}")
+    api("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
+    api(project(":extensions:azure:cosmos:cosmos-common"))
+    api("org.eclipse.dataspaceconnector:dataloading:${edcCoreVersion}")
 
     implementation("com.azure:azure-cosmos:${cosmosSdkVersion}")
     implementation("net.jodah:failsafe:${jodahFailsafeVersion}")
 
-     testImplementation(testFixtures(project(":extensions:azure:azure-test")))
-     testImplementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
+    testImplementation(testFixtures(project(":extensions:azure:azure-test")))
+    testImplementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}:test-fixtures")
 }
 
 publishing {

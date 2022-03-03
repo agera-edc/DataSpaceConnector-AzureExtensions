@@ -33,7 +33,7 @@ dependencies {
     testImplementation("com.azure.resourcemanager:azure-resourcemanager:2.1.0")
     testImplementation("com.azure:azure-identity:1.2.5")
     testImplementation("com.azure.resourcemanager:azure-resourcemanager-keyvault:2.2.0")
-    testImplementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
+    testImplementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}:test-fixtures")
     testImplementation("org.mockito:mockito-inline:${mockitoVersion}")
 }
 
