@@ -28,7 +28,7 @@ dependencies {
     implementation("net.jodah:failsafe:${jodahFailsafeVersion}")
 
     testImplementation(testFixtures(project(":extensions:azure:azure-test")))
-    testImplementation(testFixtures("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}"))
+    testImplementation("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}")
 }
 
 publishing {
