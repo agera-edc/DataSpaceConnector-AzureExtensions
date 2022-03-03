@@ -15,9 +15,11 @@
 
 rootProject.name = "dataspaceconnector"
 
-// modules for common/util code
+// core modules
+include(":core:common:util")
+include(":core:core")
 
-
+// own modules
 include(":extensions:azure:blobstorage")
 include(":extensions:azure:blobstorage:blob-core")
 include(":extensions:azure:blobstorage:blob-provision")

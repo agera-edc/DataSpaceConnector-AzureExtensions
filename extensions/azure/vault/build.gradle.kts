@@ -20,9 +20,9 @@ plugins {
 }
 
 dependencies {
-    api(project(":spi:core-spi"))
+    api(project(":core:spi:core-spi"))
 
-    implementation(project(":common:util"))
+    implementation(project(":core:common:util"))
     implementation("com.azure:azure-security-keyvault-secrets:4.2.3")
     implementation("com.azure:azure-identity:1.2.0")
     implementation("jakarta.ws.rs:jakarta.ws.rs-api:${rsApi}")
@@ -31,7 +31,7 @@ dependencies {
     testImplementation("com.azure.resourcemanager:azure-resourcemanager:2.1.0")
     testImplementation("com.azure:azure-identity:1.2.5")
     testImplementation("com.azure.resourcemanager:azure-resourcemanager-keyvault:2.2.0")
-    testImplementation(testFixtures(project(":common:util")))
+    testImplementation(testFixtures(project(":core:common:util")))
     testImplementation("org.mockito:mockito-inline:${mockitoVersion}")
 }
 

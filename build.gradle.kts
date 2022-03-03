@@ -17,7 +17,6 @@ plugins {
     `maven-publish`
     checkstyle
     jacoco
-    id("com.rameshkp.openapi-merger-gradle-plugin") version "1.0.4"
 }
 
 repositories {
@@ -52,8 +51,6 @@ subprojects {
             url = uri("https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/")
         }
     }
-
-    tasks.register<DependencyReportTask>("allDependencies") {}
 }
 
 buildscript {
@@ -81,13 +78,6 @@ allprojects {
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(javaVersion))
-        }
-    }
-
-    // EdcRuntimeExtension uses this to determine the runtime classpath of the module to run.
-    tasks.register("printClasspath") {
-        doLast {
-            println(sourceSets["main"].runtimeClasspath.asPath);
         }
     }
 
@@ -181,29 +171,6 @@ allprojects {
         tasks.jacocoTestReport {
             reports {
                 xml.required.set(true)
-            }
-        }
-    }
-}
-
-openApiMerger {
-    val yamlDirectory = file("${rootProject.projectDir.path}/resources/openapi/yaml")
-
-    inputDirectory.set(yamlDirectory)
-    output {
-        directory.set(file("${rootProject.projectDir.path}/resources/openapi/"))
-        fileName.set("openapi")
-        fileExtension.set("yaml")
-    }
-    openApi {
-        openApiVersion.set("3.0.1")
-        info {
-            title.set("EDC REST API")
-            description.set("All files merged by open api merger")
-            version.set("1.0.0-SNAPSHOT")
-            license {
-                name.set("Apache License v2.0")
-                url.set("http://apache.org/v2")
             }
         }
     }
