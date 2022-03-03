@@ -9,6 +9,8 @@ jobs:
 
     env:
       RUN_INTEGRATION_TEST: true
+      EDC_CORE_GITHUB_ACTOR: ${{ secrets.EDC_CORE_GITHUB_ACTOR }}
+      EDC_CORE_GITHUB_TOKEN: ${{ secrets.EDC_CORE_GITHUB_TOKEN }}
 
     services:
       azurite:
@@ -37,6 +39,8 @@ jobs:
 
     env:
       RUN_INTEGRATION_TEST: true
+      EDC_CORE_GITHUB_ACTOR: ${{ secrets.EDC_CORE_GITHUB_ACTOR }}
+      EDC_CORE_GITHUB_TOKEN: ${{ secrets.EDC_CORE_GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v2
