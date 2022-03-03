@@ -30,8 +30,8 @@ dependencies {
      implementation("org.eclipse.dataspaceconnector:data-plane-spi:${edcCoreVersion}")
      implementation("org.eclipse.dataspaceconnector:data-plane-framework:${edcCoreVersion}")
      implementation("org.eclipse.dataspaceconnector:data-plane-http:${edcCoreVersion}")
-     implementation("org.eclipse.dataspaceconnector:data-plane-azure-storage:${edcCoreVersion}")
-     implementation("org.eclipse.dataspaceconnector:data-plane-azure-api:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:data-plane-api:${edcCoreVersion}")
+     implementation(project(":extensions:azure:data-plane-azure-storage"))
 }
 
 application {
