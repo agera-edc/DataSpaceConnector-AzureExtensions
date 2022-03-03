@@ -27,8 +27,7 @@ dependencies {
     implementation("com.azure:azure-cosmos:${cosmosSdkVersion}")
     implementation("net.jodah:failsafe:${jodahFailsafeVersion}")
 
-
-     testImplementation(testFixtures("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}"))
+    testImplementation(testFixtures("org.eclipse.dataspaceconnector:common-util:${edcCoreVersion}"))
     testImplementation(testFixtures(project(":extensions:azure:azure-test")))
 }
 

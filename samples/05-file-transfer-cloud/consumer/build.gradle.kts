@@ -27,11 +27,11 @@ dependencies {
      implementation("org.eclipse.dataspaceconnector:core:${edcCoreVersion}")
 
      implementation("org.eclipse.dataspaceconnector:assetindex-memory:${edcCoreVersion}")
-     implementation("org.eclipse.dataspaceconnector:transfer-store-memory:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:transfer-process-store-memory:${edcCoreVersion}")
      implementation("org.eclipse.dataspaceconnector:contractdefinition-store-memory:${edcCoreVersion}")
-     implementation("org.eclipse.dataspaceconnector:configuration-fs:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:filesystem-configuration:${edcCoreVersion}")
      implementation("org.eclipse.dataspaceconnector:assetindex-memory:${edcCoreVersion}")
-     implementation("org.eclipse.dataspaceconnector:negotiation-store-memory:${edcCoreVersion}")
+     implementation("org.eclipse.dataspaceconnector:contractnegotiation-store-memory:${edcCoreVersion}")
      implementation("org.eclipse.dataspaceconnector:http:${edcCoreVersion}")
 
      implementation("org.eclipse.dataspaceconnector:s3-provision:${edcCoreVersion}")
