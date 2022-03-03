@@ -35,7 +35,6 @@ include(":extensions:azure:registration-service")
 include(":extensions:azure:vault")
 
 include(":extensions:azure:data-plane-azure-storage")
-include(":extensions:data-plane:integration-tests")
 
 
 include(":launchers:data-plane-server")
