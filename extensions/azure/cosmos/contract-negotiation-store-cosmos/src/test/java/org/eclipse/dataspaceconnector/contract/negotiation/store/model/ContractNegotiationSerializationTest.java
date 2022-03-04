@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.eclipse.dataspaceconnector.contract.negotiation.store.TestFunctions.generateNegotiation;
 
-class ContractNegotiationDocumentSerializationTest {
+class ContractNegotiationSerializationTest {
 
     private TypeManager typeManager;
     private final String partitionKey = "test-connector-partition";
